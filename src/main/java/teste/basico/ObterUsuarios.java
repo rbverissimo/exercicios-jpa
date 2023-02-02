@@ -11,10 +11,6 @@ import modelo.basico.Usuario;
 
 public class ObterUsuarios {
 	
-	EntityManagerFactory emf = Persistence
-			.createEntityManagerFactory("exercicios-jpa");
-	EntityManager em = emf.createEntityManager();
-	
 	
 	public static void main(String[] args) {
 		
@@ -25,8 +21,11 @@ public class ObterUsuarios {
 		
 		String jpql = "select u from Usuario u";
 		TypedQuery<Usuario> query = em.createQuery(jpql, Usuario.class);
+		
+		
 		query.setMaxResults(5);
 		
+		//A lista usuarios vai guardar os resultados adquiridos na query
 		List<Usuario> usuarios = query.getResultList();
 		
 		for(Usuario u: usuarios) {

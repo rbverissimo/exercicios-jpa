@@ -6,7 +6,7 @@ import javax.persistence.Persistence;
 
 import modelo.basico.Usuario;
 
-public class NovoUsuario {
+public class AlterarUsuario2 {
 	
 	public static void main(String[] args) {
 		
@@ -14,17 +14,27 @@ public class NovoUsuario {
 				.createEntityManagerFactory("exercicios-jpa");
 		EntityManager em = emf.createEntityManager();
 		
-		Usuario novoUsuario = new Usuario("Janio", "janio@lanche.com.br");
 		
 		em.getTransaction().begin();
-		em.persist(novoUsuario);
+		
+		
+		Usuario usuario = em.find(Usuario.class, 5L);
+		System.out.println(usuario.getEmail());
+		
+		// Update no usuário
+		usuario.setNome("Roberval Alterado");
+		
+		// em.merge(usuario); 
+		/* Mesmo sem o merge, após fazer uma consulta no id 5
+		 * o JPA mantém o resultado da consulta em um estado de gerenciamento
+		 * Se houver qualquer alteração no objeto o Data Mapper alterará também 
+		 * o banco de dados
+		 */
+		
 		em.getTransaction().commit();
 		
-		System.out.println("O ID gerado foi: " + novoUsuario.getId());
-
 		em.close();
 		emf.close();
-		
 	}
 
 }
