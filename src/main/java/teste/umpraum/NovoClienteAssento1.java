@@ -8,8 +8,8 @@ public class NovoClienteAssento1 {
 	
 	public static void main(String[] args) {
 		
-		Assento assento = new Assento("9A");
-		Cliente cliente = new Cliente("Carlos", assento);
+		Assento assento = new Assento("15B");
+		Cliente cliente = new Cliente("Joana", assento);
 		
 		DAO<Object> dao = new DAO<>();
 		
