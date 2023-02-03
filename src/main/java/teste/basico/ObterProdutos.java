@@ -23,6 +23,8 @@ public class ObterProdutos {
 								.doubleValue();
 		System.out.println("O valor total de produtos é R$ " + precoTotal);
 		
+		dao.fechar();
+		
 	}
 
 }
