@@ -9,6 +9,8 @@
 	<class>modelo.basico.Produto</class>
 	<class>modelo.umpraum.Assento</class>
 	<class>modelo.umpraum.Cliente</class>
+	<class>modelo.umparamuitos.ItemPedido</class>
+	<class>modelo.umparamuitos.Pedido</class>
 
 <!-- 	<mapping-file>META-INF/consultas.xml</mapping-file> -->
 	
