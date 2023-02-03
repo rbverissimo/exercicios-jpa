@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -18,6 +19,7 @@ public class Cliente {
 	private String nome;
 	
 	@OneToOne
+	@JoinColumn(name = "assento_id", unique = true)
 	private Assento assento;
 	
 	
