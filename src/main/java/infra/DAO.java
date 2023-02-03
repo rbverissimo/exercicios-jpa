@@ -51,6 +51,11 @@ public class DAO<E> {
 		return this.abrirT().incluir(entidade).fecharT();
 	}
 	
+	public E obterPorID(Object id) {
+		return em.find(classe, id);
+		
+	}
+	
 	// limit-offset: qted-deslocamento (para paginação)
 	public List<E> obterTodos(int qntde, int deslocamento){
 		if(classe == null) {
