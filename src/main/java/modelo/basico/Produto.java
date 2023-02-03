@@ -61,6 +61,11 @@ public class Produto {
 		this.preco = preco;
 	}
 	
+	@Override
+	public String toString() {
+		return "ID: " + this.getId() + ", Nome: " + this.getNome();
+	}
+	
 	
 
 }
