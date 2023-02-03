@@ -1,7 +1,8 @@
-package modelo.umparamuitos;
+package modelo.umpramuitos;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,10 +15,16 @@ public class Pedido {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
+	@Column(nullable = false)
 	private Date data;
 	
 	public Pedido() {
-		// TODO Auto-generated constructor stub
+		this(new Date());
+	}
+
+	public Pedido(Date data) {
+		super();
+		this.data = data;
 	}
 
 	public Long getId() {
