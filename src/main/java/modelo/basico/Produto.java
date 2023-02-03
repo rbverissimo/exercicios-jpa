@@ -26,6 +26,16 @@ public class Produto {
 	public Produto() {
 		// TODO Auto-generated constructor stub
 	}
+	
+	
+
+	public Produto(String nome, Double preco) {
+		super();
+		this.nome = nome;
+		this.preco = preco;
+	}
+
+
 
 	public Long getId() {
 		return id;
