@@ -1,6 +1,8 @@
-package modelo.umpramuitos;
+package teste.umpramuitos;
 
 import infra.DAO;
+import modelo.umpramuitos.ItemPedido;
+import modelo.umpramuitos.Pedido;
 
 public class ObterPedido {
 
