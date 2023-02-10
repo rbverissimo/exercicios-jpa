@@ -28,7 +28,7 @@ public class Filme {
 	@JoinTable(name = "atores_filmes", 
 		joinColumns = @JoinColumn(name = "filme_id", referencedColumnName = "id"),
 		inverseJoinColumns = @JoinColumn(name = "ator_id", referencedColumnName = "id"))
-	private List<Ator> atores = new ArrayList<>();
+	private List<Ator> atores;
 	
 	public Filme() {
 		// TODO Auto-generated constructor stub
@@ -56,6 +56,9 @@ public class Filme {
 	}
 
 	public List<Ator> getAtores() {
+		if(atores == null) {
+			atores = new ArrayList<>();
+		}
 		return atores;
 	}
 
@@ -69,6 +72,14 @@ public class Filme {
 
 	public void setNota(Double nota) {
 		this.nota = nota;
+	}
+	
+	
+	public void adicionarAtor(Ator a) {
+		if(a != null && !getAtores().contains(a)) {
+		getAtores().add(a);
+		if(!a.getFilmes().contains(this)) a.getFilmes().add(this);
+		}
 	}
 	
 	
