@@ -19,6 +19,45 @@ public class Tio {
 	
 	@ManyToMany
 	private List<Sobrinho> sobrinhos;
+	
+	public Tio() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	
+
+	public Tio(String nome) {
+		super();
+		this.nome = nome;
+	}
+
+
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public List<Sobrinho> getSobrinhos() {
+		return sobrinhos;
+	}
+
+	public void setSobrinhos(List<Sobrinho> sobrinhos) {
+		this.sobrinhos = sobrinhos;
+	}
+	
+	
 
 
 }
