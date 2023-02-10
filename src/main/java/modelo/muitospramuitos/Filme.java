@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
@@ -23,6 +25,9 @@ public class Filme {
 	private Double nota;
 	
 	@ManyToMany
+	@JoinTable(name = "atores_filmes", 
+		joinColumns = @JoinColumn(name = "filme_id", referencedColumnName = "id"),
+		inverseJoinColumns = @JoinColumn(name = "ator_id", referencedColumnName = "id"))
 	private List<Ator> atores = new ArrayList<>();
 	
 	public Filme() {
