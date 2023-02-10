@@ -1,5 +1,6 @@
 package teste.muitospramuitos;
 
+import infra.DAO;
 import modelo.muitospramuitos.Sobrinho;
 import modelo.muitospramuitos.Tio;
 
@@ -23,6 +24,19 @@ public class NovoTioSobrinho {
 		tio2.getSobrinhos().add(s2);
 		s1.getTios().add(tio2);
 		s2.getTios().add(tio2);
+		
+		DAO<Object> dao = new DAO<>();
+		
+		dao.abrirT()
+			.incluir(tio1)
+			.incluir(tio2)
+			.incluir(s1)
+			.incluir(s2)
+			.fecharT()
+			.fechar();
+		
+		
+			
 		
 	}
 }

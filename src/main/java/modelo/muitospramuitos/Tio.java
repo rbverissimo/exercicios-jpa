@@ -1,5 +1,6 @@
 package modelo.muitospramuitos;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -18,7 +19,7 @@ public class Tio {
 	private String nome;
 	
 	@ManyToMany
-	private List<Sobrinho> sobrinhos;
+	private List<Sobrinho> sobrinhos = new ArrayList<>();
 	
 	public Tio() {
 		// TODO Auto-generated constructor stub
