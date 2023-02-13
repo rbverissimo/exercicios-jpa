@@ -3,6 +3,7 @@ package teste.consultas;
 import java.util.List;
 
 import infra.DAO;
+import modelo.muitospramuitos.Ator;
 import modelo.muitospramuitos.Filme;
 
 public class ObterFilmes {
@@ -13,6 +14,14 @@ public class ObterFilmes {
 		DAO<Filme> dao = new DAO<>(Filme.class);
 		List<Filme> filmes = dao.consultar(
 				"obterFilmesComNotaMaiorQue", "nota", 8.5);
+		
+		for(Filme f: filmes) {
+			System.out.println(f.getNome() + "=> " + f.getNota());
+			
+			for(Ator ator: f.getAtores()) {
+				System.out.println(ator.getNome());
+			}
+		}
 		
 	}
 

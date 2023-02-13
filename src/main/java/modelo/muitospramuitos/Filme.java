@@ -21,7 +21,7 @@ public class Filme {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	private String name;
+	private String nome;
 	
 	private Double nota;
 	
@@ -35,8 +35,8 @@ public class Filme {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Filme(String name, Double nota) {
-		this.name = name;
+	public Filme(String nome, Double nota) {
+		this.nome = nome;
 		this.nota = nota;
 	}
 
@@ -48,12 +48,12 @@ public class Filme {
 		this.id = id;
 	}
 
-	public String getName() {
-		return name;
+	public String getNome() {
+		return nome;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
 	public List<Ator> getAtores() {

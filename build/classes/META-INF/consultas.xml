@@ -3,7 +3,7 @@
 
 	<named-query name="obterFilmesComNotaMaiorQue">
 		<query>
-			select f from Filme f
+			select distinct f from Filme f
 			join fetch f.atores
 			where f.nota > :nota
 		</query>
