@@ -1,13 +1,18 @@
 package teste.consultas;
 
 import infra.DAO;
-import modelo.muitospramuitos.Filme;
+import modelo.consulta.NotaFilme;
 
 public class ObterMediaFilmes {
 	
 	public static void main(String[] args) {
 		
-		DAO<Filme> filmes = new DAO<>(Filme.class);
+		DAO<NotaFilme> dao = new DAO<>(NotaFilme.class);
+		NotaFilme nota = dao.consultarUm("obterMediaGeralDosFilmes");
+		
+		System.out.println(nota.getMedia());
+		
+		dao.fechar();
 		
 		
 	}
