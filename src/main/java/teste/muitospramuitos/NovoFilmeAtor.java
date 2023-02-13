@@ -16,9 +16,10 @@ public class NovoFilmeAtor {
 		
 		f1.adicionarAtor(a1);
 		f1.adicionarAtor(a2);
-		
+		f2.adicionarAtor(a1);		
 		DAO<Filme> dao = new DAO<>();
 		dao.incluirAtomic(f1);
+		dao.incluirAtomic(f2);
 		
 		
 	}
