@@ -11,8 +11,8 @@ public class AlunoBolsista extends Aluno {
 		// TODO Auto-generated constructor stub
 	}
 
-	public AlunoBolsista(Double valorBolsa) {
-		super();
+	public AlunoBolsista(Long matricula, String nome, Double valorBolsa) {
+		super(matricula, nome);
 		this.valorBolsa = valorBolsa;
 	}
 
